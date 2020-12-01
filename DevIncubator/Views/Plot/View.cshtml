@@ -1,0 +1,105 @@
+﻿@using DevIncubator.Models
+@model UserData
+@{
+    ViewBag.Title = "View";
+
+    Layout = "";
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/bootstrap")
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/Scripts/Chart.js")
+
+
+<body>
+    <div class="form-group">
+        <div class="col-md-8">
+            <canvas id="myChart" width="800" height="800">
+            </canvas>
+        </div>
+        <script>
+            var ctx = document.getElementById("myChart");
+            var lbl = [@Model.End];
+            let start = @Model.Start;
+            let end = @Model.End;
+            let step = @Model.Step;
+            for (var i = end - step; i >= start; i -= step) {
+                if (start == end)
+                    break;
+                lbl.unshift(i);
+            }
+
+            var data = {
+                labels: lbl,
+                datasets: [
+                {
+                    label: "your function",
+                    function: function (x) { return x * x *@Model.A + x *@Model.B +@Model.C },
+                    borderColor: "rgba(255, 206, 86, 1)",
+                    data: [],
+                    fill: false
+                }]
+            };
+
+            Chart.pluginService.register({
+                beforeInit: function (chart) {
+                    var data = chart.config.data;
+                    for (var i = 0; i < data.datasets.length; i++) {
+                        for (var j = 0; j < data.labels.length; j++) {
+                            var fct = data.datasets[i].function,
+                                x = data.labels[j],
+                                y = fct(x);
+                            data.datasets[i].data.push(y);
+                        }
+                    }
+                }
+            });
+
+            var myBarChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            myBarChart.canvas.parentNode.style.height = '900px';
+            myBarChart.canvas.parentNode.style.width = '900px';
+        </script>
+
+        <div class="col-md-4">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div>
+                    Function: y= @Html.EditorFor(Model => Model.A, new { htmlAttributes = new { @id = "A", @style = "width:30px", @type = "string" } })
+                    x^2 + @Html.EditorFor(Model => Model.B, new { htmlAttributes = new { @id = "B", @style = "width:30px", @type = "string" } })
+                    x+ @Html.EditorFor(Model => Model.C, new { htmlAttributes = new { @id = "C", @style = "width:30px", @type = "string" } })
+                </div>
+                <div>
+                    Step:   @Html.EditorFor(Model => Model.Step, new { htmlAttributes = new { @id = "Step", @style = "width:30px", @type = "string" } })
+
+                </div>
+                <div>
+                    From:  @Html.EditorFor(Model => Model.Start, new { htmlAttributes = new { @id = "Start", @style = "width:30px", @type = "string" } })
+                    to  @Html.EditorFor(Model => Model.End, new { htmlAttributes = new { @id = "End", @style = "width:30px", @type = "string" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.A, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.B, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.C, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Step, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.End, "", new { @class = "text-danger" })
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <input type="submit" value="Plot" class="btn btn-primary" />
+            }
+        </div>
+    </div>
+</body>
