@@ -1,7 +1,8 @@
 ﻿using System;
 
 namespace PreDevIncubator
-{public enum Color
+{
+    public enum Color
     {
         Red,
         Blue,
