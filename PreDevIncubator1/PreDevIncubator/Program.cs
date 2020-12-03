@@ -21,7 +21,7 @@ namespace PreDevIncubator
 
         public override string ToString()
         {
-            return TypeName + "," + '"' + TaxCoefficient + '"';
+            return TypeName + "," + '"' + TaxCoefficient.ToString() + '"';
         }
     }
     class Program
