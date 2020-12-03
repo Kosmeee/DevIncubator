@@ -1,0 +1,13 @@
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\bin\Debug\netcoreapp3.1\PreDevIncubator.exe
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\bin\Debug\netcoreapp3.1\PreDevIncubator.deps.json
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\bin\Debug\netcoreapp3.1\PreDevIncubator.runtimeconfig.json
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\bin\Debug\netcoreapp3.1\PreDevIncubator.runtimeconfig.dev.json
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\bin\Debug\netcoreapp3.1\PreDevIncubator.dll
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\bin\Debug\netcoreapp3.1\PreDevIncubator.pdb
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\obj\Debug\netcoreapp3.1\PreDevIncubator.csprojAssemblyReference.cache
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\obj\Debug\netcoreapp3.1\PreDevIncubator.AssemblyInfoInputs.cache
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\obj\Debug\netcoreapp3.1\PreDevIncubator.AssemblyInfo.cs
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\obj\Debug\netcoreapp3.1\PreDevIncubator.csproj.CoreCompileInputs.cache
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\obj\Debug\netcoreapp3.1\PreDevIncubator.dll
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\obj\Debug\netcoreapp3.1\PreDevIncubator.pdb
+C:\Users\amats\source\repos\PreDevIncubator\PreDevIncubator2\PreDevIncubator\PreDevIncubator\obj\Debug\netcoreapp3.1\PreDevIncubator.genruntimeconfig.cache
